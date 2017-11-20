@@ -1,0 +1,25 @@
+<a href="">Logout</a>
+<br><br>
+
+<h1>Hi {{loggedUser}}!</h1>
+<br>
+
+<a [routerLink]="['/add']">Create a New Poll</a>
+<br>
+<h1>Current Polls:</h1>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Survey Question</th>
+        <th>Date Posted</th>
+        <th>Action</th>
+    </tr>
+    <tr *ngFor="let poll of polls">
+        <td>{{poll.asker}}</td>
+        <td>-<a style="color: rgb(0, 0, 151)" (click)="onClickShow(poll._id)">{{poll.question}}</a>-</td>
+        <td>-{{poll.created_at}}-</td>
+        <td>Holder</td>
+    </tr>
+
+</table>

@@ -1,0 +1,18 @@
+<a href="">Logout</a>
+<br><br>
+<a [routerLink]="['/dash']">Go to Polls</a>
+
+<h2>{{question.question}}</h2>
+
+<table>
+  <tr>
+    <th>Option</th>
+    <th>Current Count of Votes</th>
+    <th>Action</th>
+  </tr>
+  <tr *ngFor = "let option of question.option">
+    <td>{{option.option}}</td>
+    <td>{{option.vote}}</td>
+    <td><button (click)="onClickVote(option._id)">Vote</button></td>
+  </tr>
+</table>
