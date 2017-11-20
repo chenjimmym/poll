@@ -23,6 +23,10 @@ module.exports = function(app){
         process.vote(req, res);
     });
     
+    app.post('/delete', function(req, res) {
+        process.deletePoll(req, res);
+    });
+
     app.get('/poll/:id', function(req, res) {
         process.getOnePoll(req, res);
     });

@@ -27,4 +27,10 @@ export class DashComponent implements OnInit {
     this.router.navigate(['vote', questionId]);
   }
 
+  onClickDelete(questionId){
+    console.log('onAng', questionId);
+    this._surveyService.deletePoll(questionId);
+    this.ngOnInit();
+  }
+
 }

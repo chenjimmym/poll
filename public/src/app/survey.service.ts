@@ -49,4 +49,8 @@ export class SurveyService {
     this._http.post('/vote', {id: id}).subscribe();
   }
 
+  deletePoll(id){
+    this._http.post('/delete', {id: id}).subscribe();
+  }
+
 }

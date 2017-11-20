@@ -25,14 +25,12 @@ export class AddComponent implements OnInit {
   }
 
   onAddQuestion(){
-    console.log(this.question);
-    console.log(this.option1);
-    console.log(this.option2);
-    console.log(this.option3);
-    console.log(this.option4);
+
     this._surveyService.addQuestion(this.loggedUser, this.question);
     this._surveyService.addOption(this.question, this.option1, this.option2, this.option3, this.option4);
-    this.router.navigate(['/vote']);
+    setTimeout(() => {
+      this.router.navigate(['vote', this.question]);
+    }, 500);
   }
 
 

@@ -19,7 +19,7 @@
         <td>{{poll.asker}}</td>
         <td>-<a style="color: rgb(0, 0, 151)" (click)="onClickShow(poll._id)">{{poll.question}}</a>-</td>
         <td>-{{poll.created_at}}-</td>
-        <td>Holder</td>
+        <td><button *ngIf="poll.asker == loggedUser" (click)="onClickDelete(poll._id)">Delete</button></td>
     </tr>
 
 </table>
