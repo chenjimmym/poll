@@ -6,6 +6,8 @@ var process = require('../controllers/process.js');
 
 module.exports = function(app){
 
+
+
     app.get('/polls', function(req, res) {
         process.getAllPolls(req, res);
     });
@@ -30,8 +32,9 @@ module.exports = function(app){
     app.get('/poll/:id', function(req, res) {
         process.getOnePoll(req, res);
     });
-    // app.all("*", (req,res,next) => {
-    //     res.sendFile(path.resolve("./../../public/dist/index.html"))
-    // });
+    
+    app.all("*", (req,res,next) => {
+        res.sendFile(path.resolve("./../../public/dist/index.html"))
+    });
 
 }
